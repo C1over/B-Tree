@@ -47,7 +47,7 @@ void insertBTree(BTree &bt, KeyType key) {
     int x, s;
     bool finished = false;
     int needNewRoot = 0;
-    BTree ap;
+ 
 
 
 }
