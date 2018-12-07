@@ -1,7 +1,3 @@
-//
-// Created by Cc1over on 2018/12/6.
-//
-
 #include <stdbool.h>
 
 #ifndef B_TREE_BTREE_H
@@ -14,19 +10,14 @@ typedef struct BTNode {
     int keyNum;                       // 关键字数量
     KeyType key[STAGE];               // 关键字数组
     struct BTNode *child[STAGE + 1];  // 孩子节点指针数组
+    struct BTNode *parent;            // 双亲节点指针
 } BTNode, *BTree;
 
-typedef struct Result {
-    BTree bt;    // 指向找到的节点
+typedef struct result {
+    BTree ptr;    // 指向找到的节点
     int order;   // 1=<order<=STAGE，在节点中关键字位序
-    int tag;     // 1：查找成功，0：查找失败
-} Result;
-
-/**
- *  初始化B树
- * @param bt   初始化的B树
- */
-void initialize(BTree &bt);
+    bool tag;     // true：查找成功，false：查找失败
+} *Result;
 
 /**
  *  在B树中查找关键字key，以result返回
@@ -34,7 +25,7 @@ void initialize(BTree &bt);
  * @param key     关键字
  * @param result  返回结果
  */
-void searchBTree(BTree bt, KeyType key, Result *result);
+void searchBTree(BTree bt, KeyType key, Result result);
 
 /**
  *  在B树中添加关键字key
