@@ -8,7 +8,7 @@ typedef int KeyType;
 
 typedef struct BTNode {
     int keyNum;                       // 关键字数量
-    KeyType key[STAGE];               // 关键字数组
+    KeyType key[STAGE + 1];           // 关键字数组
     struct BTNode *child[STAGE + 1];  // 孩子节点指针数组
     struct BTNode *parent;            // 双亲节点指针
 } BTNode, *BTree;
