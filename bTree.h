@@ -20,10 +20,12 @@ typedef struct result {
 } *Result;
 
 /**
- *  初始化一颗B树
- * @param bt
+ * 初始化B树
+ *  @param length  关键字数组长度
+ *  @param keys    关键字数组
+ *  @return        创建的B树
  */
-void initialize(BTree &bt);
+BTree initialize(BTree &bt);
 
 /**
  *  在B树中查找关键字key，以result返回
@@ -37,18 +39,26 @@ void searchBTree(BTree bt, KeyType key, Result result);
  *  在B树中添加关键字key
  * @param bt    添加的B树
  * @param key   关键字
+ * @return      操作是否成功
  */
-void insertBTree(BTree &bt, KeyType key);
+bool insertBTree(BTree &bt, KeyType key);
 
 /**
  *  删除B树中的关键key
  * @param bt    删除的B树
  * @param key   关键字
  */
-void deleteBTree(BTree &bt, KeyType key);
+bool deleteBTree(BTree &bt, KeyType key);
 
 /**
  *  摧毁B树，释放内存
  * @param bt    摧毁的B树
  */
 void destroyBTree(BTree &bt);
+
+/**
+ * 以凹入表的形式打印B树
+ *
+ * @param t B-树
+ */
+void printfBTree(BTree bt);

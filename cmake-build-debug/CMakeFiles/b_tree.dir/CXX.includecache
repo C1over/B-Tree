@@ -17,6 +17,8 @@ stdio.h
 -
 cstdlib
 -
+cctype
+-
 bTree.h
 /Users/cc1over/CLionProjects/b-tree/bTree.h
 

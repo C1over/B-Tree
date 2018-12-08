@@ -1,4 +1,5 @@
 #include <cstdlib>
+#include <cstdio>
 #include "bTree.h"
 
 int search(BTree bt, KeyType key);
@@ -8,7 +9,7 @@ void searchBTree(BTree bt, KeyType key, Result result) {
     int order = 0;
     bool found = false;
     BTree p = bt, q = NULL;
-    while (p != NULL && !found) {
+    while (p && !found) {
         order = search(p, key);
         if (order <= p->keyNum && p->key[order] == key) {
             found = true;
@@ -74,7 +75,7 @@ void newRoot(BTree &t, BTree p, KeyType key, BTree ap) {
  */
 void insert(BTree &q, int pos, int key, BTree ap) {
     int n = q->keyNum;
-    for (int j = n; j >= pos; j++) {
+    for (int j = n; j >= pos; j--) {
         q->key[j + 1] = q->key[j];
         q->child[j + 1] = q->child[j];
     }
@@ -82,8 +83,8 @@ void insert(BTree &q, int pos, int key, BTree ap) {
     q->child[pos] = ap;
     if (ap != NULL) {
         ap->parent = q;
-        q->keyNum++;
     }
+    q->keyNum++;
 }
 
 /**
@@ -103,18 +104,21 @@ void split(BTree &q, BTree &ap) {
     ap->keyNum = n - mid;
     ap->parent = q->parent;
     for (int i = 0; i <= n - mid; i++) {
-        if (ap->child[i] != NULL) {
+        if (ap->child[i]) {
             ap->child[i]->parent = ap;
         }
     }
     q->keyNum = mid - 1;
 }
 
-void insertBTree(BTree &bt, KeyType key) {
+bool insertBTree(BTree &bt, KeyType key) {
     bool finished = false;
     bool needNewRoot = false;
     Result r = static_cast<Result>(malloc(sizeof(Result)));
     searchBTree(bt, key, r);
+    if (r->tag) {
+        return false;
+    }
     BTree q = r->ptr;
     int order = r->order;
     if (!q) {
@@ -129,9 +133,9 @@ void insertBTree(BTree &bt, KeyType key) {
             } else {
                 split(q, ap);
                 x = q->key[(STAGE + 1) / 2];
-                if (q->parent != NULL) {
+                if (q->parent) {
                     q = q->parent;
-                    order = search(bt, x);
+                    order = search(q, x);
                 } else {
                     needNewRoot = true;
                 }
@@ -141,6 +145,7 @@ void insertBTree(BTree &bt, KeyType key) {
             newRoot(bt, q, x, ap);
         }
     }
+    return true;
 }
 
 /**
@@ -155,10 +160,10 @@ void successor(BTree &p, int order) {
         return;
     }
     leaf = leaf->child[order];
-    while (!leaf->child[0]) {
+    while (leaf->child[0]) {
         leaf = leaf->child[0];
     }
-    p->key[order] = leaf->key[0];
+    p->key[order] = leaf->key[1];
     p = leaf;
 }
 
@@ -168,9 +173,9 @@ void successor(BTree &p, int order) {
  * @param order   关键字位序
  */
 void remove(BTree &p, int order) {
-    for (int k = order; k < p->keyNum - 1; k++) {
+    for (int k = order; k < p->keyNum; k++) {
         p->key[k] = p->key[k + 1];
-        p->child[k + 1] = p->child[k + 2];
+        p->child[k] = p->child[k + 1];
     }
     p->keyNum--;
 }
@@ -403,23 +408,35 @@ void mergeWithRightBrother(BTree &rightBrother, BTree &parent,
     }
 }
 
-void deleteBTree(BTree &bt, KeyType key) {
-    Result rs = static_cast<Result>(malloc(sizeof(BTNode)));
-    searchBTree(bt, key, rs);
-    if (!rs->tag) {
-        return;
-    }
-    BTree p = rs->ptr;
-    int order = rs->order;
-    if (p->child[order] != NULL) {
+/**
+ * 删除B-树上p结点的第i个关键字
+ *
+ * @param bt     B树
+ * @param p      目标关键字所在结点
+ * @param order  关键字位序
+ */
+void deleteBTreeKey(BTree &bt, BTree &p, int order) {
+    if (p->child[order]) {
         successor(p, order);
-        deleteBTree(p, 0);
+        deleteBTreeKey(bt, p, 1);
     } else {
         remove(p, order);
         if (p->keyNum < (STAGE - 1) / 2) {
             restore(bt, p);
         }
     }
+}
+
+bool deleteBTree(BTree &bt, KeyType key) {
+    Result rs = static_cast<Result>(malloc(sizeof(BTNode)));
+    searchBTree(bt, key, rs);
+    if (!rs->tag) {
+        return false;
+    }
+    BTree p = rs->ptr;
+    int order = rs->order;
+    deleteBTreeKey(bt, p, order);
+    return true;
 }
 
 void destroyBTree(BTree &bt) {
@@ -434,6 +451,32 @@ void destroyBTree(BTree &bt) {
     free(bt);
 }
 
-void initialize(BTree &bt) {
-    bt = static_cast<BTree>(malloc(sizeof(BTNode)));
+BTree initialize(BTree &bt) {
+   bt = static_cast<BTree>(malloc(sizeof(BTNode)));
 }
+
+void showBTree(BTree bt, int tab) {
+    if (!bt) {
+        return;
+    }
+    int i;
+    for (i = 1; i <= tab; i++) {
+        printf("    ");
+    }
+    for (i = 1; i <= bt->keyNum; i++) {
+        printf("%d", bt->key[i]);
+        if (i != bt->keyNum) {
+            printf(", ");
+        }
+    }
+    printf("\n");
+    for (i = 0; i <= bt->keyNum; i++) {
+        showBTree(bt->child[i], tab + 1);
+    }
+}
+
+void printfBTree(BTree bt) {
+    int tag = 3;
+    showBTree(bt, tag);
+}
+
