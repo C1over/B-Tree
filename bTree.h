@@ -15,9 +15,15 @@ typedef struct BTNode {
 
 typedef struct result {
     BTree ptr;    // 指向找到的节点
-    int order;   // 1=<order<=STAGE，在节点中关键字位序
+    int order;    // 1=<order<=STAGE，在节点中关键字位序
     bool tag;     // true：查找成功，false：查找失败
 } *Result;
+
+/**
+ *  初始化一颗B树
+ * @param bt
+ */
+void initialize(BTree &bt);
 
 /**
  *  在B树中查找关键字key，以result返回

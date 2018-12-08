@@ -43,17 +43,26 @@ int search(BTree bt, KeyType k) {
 }
 
 
-void insertBTree(BTree &bt, KeyType key) {
-    int x, s;
-    bool finished = false;
-    int needNewRoot = 0;
- 
-
-
-}
-
-void newRoot() {
-
+/**
+ *  生成一个新的根节点
+ * @param t      新节点
+ * @param p      关键字的左节点
+ * @param key    关键字
+ * @param ap     关键字的右节点
+ */
+void newRoot(BTree &t, BTree p, KeyType key, BTree ap) {
+    t = static_cast<BTree>(malloc(sizeof(BTNode)));
+    t->keyNum = 1;
+    t->child[0] = p;
+    t->child[1] = ap;
+    t->key[0] = key;
+    if (p != NULL) {
+        p->parent = t;
+    }
+    if (ap != NULL) {
+        ap->parent = t;
+    }
+    t->parent = NULL;
 }
 
 /**
@@ -101,11 +110,56 @@ void split(BTree &q, BTree &ap) {
     q->keyNum = mid - 1;
 }
 
+void insertBTree(BTree &bt, KeyType key) {
+    bool finished = false;
+    bool needNewRoot = false;
+    Result r = static_cast<Result>(malloc(sizeof(Result)));
+    searchBTree(bt, key, r);
+    BTree q = r->ptr;
+    int order = r->order;
+    if (q == NULL) {
+        newRoot(bt, NULL, key, NULL);
+    } else {
+        int x = key;
+        BTree ap = NULL;
+        while (!needNewRoot && !finished) {
+            insert(q, order, x, ap);
+            if (q->keyNum < STAGE) {
+                finished = true;
+            } else {
+                split(q, ap);
+                x = q->key[STAGE / 2];
+                if (q->parent != NULL) {
+                    q = q->parent;
+                    order = search(bt, x);
+                } else {
+                    needNewRoot = true;
+                }
+            }
+        }
+        if (needNewRoot) {
+            newRoot(bt, q, x, ap);
+        }
+    }
+}
+
 
 void deleteBTree(BTree &bt, KeyType key) {
 
 }
 
 void destroyBTree(BTree &bt) {
+    if (bt == NULL) {
+        return;
+    }
+    for (int i = 0; i <= bt->keyNum; i++) {
+        if (!bt->child[i]) {
+            destroyBTree(bt->child[i]);
+        }
+    }
+    free(bt);
+}
 
+void initialize(BTree &bt) {
+    bt = static_cast<BTree>(malloc(sizeof(BTNode)));
 }
