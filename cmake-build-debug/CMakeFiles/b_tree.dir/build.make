@@ -57,22 +57,9 @@ include CMakeFiles/b_tree.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/b_tree.dir/flags.make
 
-CMakeFiles/b_tree.dir/main.cpp.o: CMakeFiles/b_tree.dir/flags.make
-CMakeFiles/b_tree.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cc1over/CLionProjects/b-tree/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/b_tree.dir/main.cpp.o"
-	/usr/local/Cellar/gcc@4.9/4.9.4_1/bin/g++-4.9  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/b_tree.dir/main.cpp.o -c /Users/cc1over/CLionProjects/b-tree/main.cpp
-
-CMakeFiles/b_tree.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/b_tree.dir/main.cpp.i"
-	/usr/local/Cellar/gcc@4.9/4.9.4_1/bin/g++-4.9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cc1over/CLionProjects/b-tree/main.cpp > CMakeFiles/b_tree.dir/main.cpp.i
-
-CMakeFiles/b_tree.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/b_tree.dir/main.cpp.s"
-	/usr/local/Cellar/gcc@4.9/4.9.4_1/bin/g++-4.9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cc1over/CLionProjects/b-tree/main.cpp -o CMakeFiles/b_tree.dir/main.cpp.s
-
 CMakeFiles/b_tree.dir/bTree.cpp.o: CMakeFiles/b_tree.dir/flags.make
 CMakeFiles/b_tree.dir/bTree.cpp.o: ../bTree.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cc1over/CLionProjects/b-tree/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/b_tree.dir/bTree.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cc1over/CLionProjects/b-tree/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/b_tree.dir/bTree.cpp.o"
 	/usr/local/Cellar/gcc@4.9/4.9.4_1/bin/g++-4.9  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/b_tree.dir/bTree.cpp.o -c /Users/cc1over/CLionProjects/b-tree/bTree.cpp
 
 CMakeFiles/b_tree.dir/bTree.cpp.i: cmake_force
@@ -83,19 +70,47 @@ CMakeFiles/b_tree.dir/bTree.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/b_tree.dir/bTree.cpp.s"
 	/usr/local/Cellar/gcc@4.9/4.9.4_1/bin/g++-4.9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cc1over/CLionProjects/b-tree/bTree.cpp -o CMakeFiles/b_tree.dir/bTree.cpp.s
 
+CMakeFiles/b_tree.dir/run.cpp.o: CMakeFiles/b_tree.dir/flags.make
+CMakeFiles/b_tree.dir/run.cpp.o: ../run.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cc1over/CLionProjects/b-tree/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/b_tree.dir/run.cpp.o"
+	/usr/local/Cellar/gcc@4.9/4.9.4_1/bin/g++-4.9  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/b_tree.dir/run.cpp.o -c /Users/cc1over/CLionProjects/b-tree/run.cpp
+
+CMakeFiles/b_tree.dir/run.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/b_tree.dir/run.cpp.i"
+	/usr/local/Cellar/gcc@4.9/4.9.4_1/bin/g++-4.9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cc1over/CLionProjects/b-tree/run.cpp > CMakeFiles/b_tree.dir/run.cpp.i
+
+CMakeFiles/b_tree.dir/run.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/b_tree.dir/run.cpp.s"
+	/usr/local/Cellar/gcc@4.9/4.9.4_1/bin/g++-4.9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cc1over/CLionProjects/b-tree/run.cpp -o CMakeFiles/b_tree.dir/run.cpp.s
+
+CMakeFiles/b_tree.dir/queue.cpp.o: CMakeFiles/b_tree.dir/flags.make
+CMakeFiles/b_tree.dir/queue.cpp.o: queue.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cc1over/CLionProjects/b-tree/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/b_tree.dir/queue.cpp.o"
+	/usr/local/Cellar/gcc@4.9/4.9.4_1/bin/g++-4.9  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/b_tree.dir/queue.cpp.o -c /Users/cc1over/CLionProjects/b-tree/cmake-build-debug/queue.cpp
+
+CMakeFiles/b_tree.dir/queue.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/b_tree.dir/queue.cpp.i"
+	/usr/local/Cellar/gcc@4.9/4.9.4_1/bin/g++-4.9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cc1over/CLionProjects/b-tree/cmake-build-debug/queue.cpp > CMakeFiles/b_tree.dir/queue.cpp.i
+
+CMakeFiles/b_tree.dir/queue.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/b_tree.dir/queue.cpp.s"
+	/usr/local/Cellar/gcc@4.9/4.9.4_1/bin/g++-4.9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cc1over/CLionProjects/b-tree/cmake-build-debug/queue.cpp -o CMakeFiles/b_tree.dir/queue.cpp.s
+
 # Object files for target b_tree
 b_tree_OBJECTS = \
-"CMakeFiles/b_tree.dir/main.cpp.o" \
-"CMakeFiles/b_tree.dir/bTree.cpp.o"
+"CMakeFiles/b_tree.dir/bTree.cpp.o" \
+"CMakeFiles/b_tree.dir/run.cpp.o" \
+"CMakeFiles/b_tree.dir/queue.cpp.o"
 
 # External object files for target b_tree
 b_tree_EXTERNAL_OBJECTS =
 
-b_tree: CMakeFiles/b_tree.dir/main.cpp.o
 b_tree: CMakeFiles/b_tree.dir/bTree.cpp.o
+b_tree: CMakeFiles/b_tree.dir/run.cpp.o
+b_tree: CMakeFiles/b_tree.dir/queue.cpp.o
 b_tree: CMakeFiles/b_tree.dir/build.make
 b_tree: CMakeFiles/b_tree.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/cc1over/CLionProjects/b-tree/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable b_tree"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/cc1over/CLionProjects/b-tree/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable b_tree"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/b_tree.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -10,14 +10,8 @@
 stdbool.h
 -
 
-/Users/cc1over/CLionProjects/b-tree/main.cpp
-cstdio
--
-stdio.h
--
+/Users/cc1over/CLionProjects/b-tree/run.cpp
 cstdlib
--
-cctype
 -
 bTree.h
 /Users/cc1over/CLionProjects/b-tree/bTree.h

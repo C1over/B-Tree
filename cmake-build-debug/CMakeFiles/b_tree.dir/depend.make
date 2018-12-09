@@ -4,6 +4,6 @@
 CMakeFiles/b_tree.dir/bTree.cpp.o: ../bTree.cpp
 CMakeFiles/b_tree.dir/bTree.cpp.o: ../bTree.h
 
-CMakeFiles/b_tree.dir/main.cpp.o: ../bTree.h
-CMakeFiles/b_tree.dir/main.cpp.o: ../main.cpp
+CMakeFiles/b_tree.dir/run.cpp.o: ../bTree.h
+CMakeFiles/b_tree.dir/run.cpp.o: ../run.cpp
 

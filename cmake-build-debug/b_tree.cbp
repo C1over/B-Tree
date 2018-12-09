@@ -94,7 +94,13 @@
 		<Unit filename="/Users/cc1over/CLionProjects/b-tree/bTree.h">
 			<Option target="b_tree"/>
 		</Unit>
-		<Unit filename="/Users/cc1over/CLionProjects/b-tree/main.cpp">
+		<Unit filename="/Users/cc1over/CLionProjects/b-tree/cmake-build-debug/queue.cpp">
+			<Option target="b_tree"/>
+		</Unit>
+		<Unit filename="/Users/cc1over/CLionProjects/b-tree/queue.h">
+			<Option target="b_tree"/>
+		</Unit>
+		<Unit filename="/Users/cc1over/CLionProjects/b-tree/run.cpp">
 			<Option target="b_tree"/>
 		</Unit>
 		<Unit filename="/Users/cc1over/CLionProjects/b-tree/CMakeLists.txt">

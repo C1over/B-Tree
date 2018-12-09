@@ -452,7 +452,7 @@ void destroyBTree(BTree &bt) {
 }
 
 BTree initialize(BTree &bt) {
-   bt = static_cast<BTree>(malloc(sizeof(BTNode)));
+    bt = static_cast<BTree>(malloc(sizeof(BTNode)));
 }
 
 void showBTree(BTree bt, int tab) {
@@ -471,7 +471,14 @@ void showBTree(BTree bt, int tab) {
     }
     printf("\n");
     for (i = 0; i <= bt->keyNum; i++) {
-        showBTree(bt->child[i], tab + 1);
+        if (i == 0) {
+            showBTree(bt->child[i], tab - 1);
+        } else if (i == 1) {
+            showBTree(bt->child[i], tab);
+        } else {
+            showBTree(bt->child[i], tab + 1);
+
+        }
     }
 }
 

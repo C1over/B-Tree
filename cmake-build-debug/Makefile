@@ -150,32 +150,59 @@ bTree.cpp.s:
 	$(MAKE) -f CMakeFiles/b_tree.dir/build.make CMakeFiles/b_tree.dir/bTree.cpp.s
 .PHONY : bTree.cpp.s
 
-main.o: main.cpp.o
+queue.o: queue.cpp.o
 
-.PHONY : main.o
+.PHONY : queue.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/b_tree.dir/build.make CMakeFiles/b_tree.dir/main.cpp.o
-.PHONY : main.cpp.o
+queue.cpp.o:
+	$(MAKE) -f CMakeFiles/b_tree.dir/build.make CMakeFiles/b_tree.dir/queue.cpp.o
+.PHONY : queue.cpp.o
 
-main.i: main.cpp.i
+queue.i: queue.cpp.i
 
-.PHONY : main.i
+.PHONY : queue.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/b_tree.dir/build.make CMakeFiles/b_tree.dir/main.cpp.i
-.PHONY : main.cpp.i
+queue.cpp.i:
+	$(MAKE) -f CMakeFiles/b_tree.dir/build.make CMakeFiles/b_tree.dir/queue.cpp.i
+.PHONY : queue.cpp.i
 
-main.s: main.cpp.s
+queue.s: queue.cpp.s
 
-.PHONY : main.s
+.PHONY : queue.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/b_tree.dir/build.make CMakeFiles/b_tree.dir/main.cpp.s
-.PHONY : main.cpp.s
+queue.cpp.s:
+	$(MAKE) -f CMakeFiles/b_tree.dir/build.make CMakeFiles/b_tree.dir/queue.cpp.s
+.PHONY : queue.cpp.s
+
+run.o: run.cpp.o
+
+.PHONY : run.o
+
+# target to build an object file
+run.cpp.o:
+	$(MAKE) -f CMakeFiles/b_tree.dir/build.make CMakeFiles/b_tree.dir/run.cpp.o
+.PHONY : run.cpp.o
+
+run.i: run.cpp.i
+
+.PHONY : run.i
+
+# target to preprocess a source file
+run.cpp.i:
+	$(MAKE) -f CMakeFiles/b_tree.dir/build.make CMakeFiles/b_tree.dir/run.cpp.i
+.PHONY : run.cpp.i
+
+run.s: run.cpp.s
+
+.PHONY : run.s
+
+# target to generate assembly for a file
+run.cpp.s:
+	$(MAKE) -f CMakeFiles/b_tree.dir/build.make CMakeFiles/b_tree.dir/run.cpp.s
+.PHONY : run.cpp.s
 
 # Help Target
 help:
@@ -189,9 +216,12 @@ help:
 	@echo "... bTree.o"
 	@echo "... bTree.i"
 	@echo "... bTree.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... queue.o"
+	@echo "... queue.i"
+	@echo "... queue.s"
+	@echo "... run.o"
+	@echo "... run.i"
+	@echo "... run.s"
 .PHONY : help
 
 
