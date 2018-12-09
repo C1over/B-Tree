@@ -13,6 +13,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c6d022ff-4d06-4db1-bb5a-eed636052e31" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bTree.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/bTree.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bTree.h" beforeDir="false" afterPath="$PROJECT_DIR$/bTree.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/b_tree.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/b_tree.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/b_tree" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/b_tree" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/b_tree.dSYM/Contents/Resources/DWARF/b_tree" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/b_tree.dSYM/Contents/Resources/DWARF/b_tree" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/run.cpp" afterDir="false" />
@@ -44,8 +47,8 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cpp" value="10974" />
-          <entry key="h" value="1111" />
+          <entry key="cpp" value="11089" />
+          <entry key="h" value="1218" />
           <entry key="md" value="6" />
           <entry key="txt" value="24" />
         </counts>
@@ -53,8 +56,8 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CMakeLists.txt" value="24" />
-          <entry key="Doxygen file" value="34" />
-          <entry key="ObjectiveC" value="12051" />
+          <entry key="Doxygen file" value="35" />
+          <entry key="ObjectiveC" value="12272" />
           <entry key="PLAIN_TEXT" value="6" />
         </counts>
       </usages-collector>
@@ -86,8 +89,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/run.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+            <state relative-caret-position="48">
+              <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -98,8 +101,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bTree.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1212">
-              <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+            <state relative-caret-position="376">
+              <caret line="76" column="4" selection-start-line="76" selection-start-column="4" selection-end-line="76" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -107,8 +110,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bTree.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="725">
-              <caret line="260" column="32" selection-start-line="260" selection-start-column="32" selection-end-line="260" selection-end-column="32" />
+            <state relative-caret-position="214">
+              <caret line="541" column="4" selection-start-line="541" selection-start-column="4" selection-end-line="541" selection-end-column="4" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -131,8 +134,8 @@
         <option value="$PROJECT_DIR$/queue.h" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/bTree.h" />
         <option value="$PROJECT_DIR$/bTree.cpp" />
+        <option value="$PROJECT_DIR$/bTree.h" />
         <option value="$PROJECT_DIR$/run.cpp" />
       </list>
     </option>
@@ -228,12 +231,12 @@
       <workItem from="1544331082387" duration="10395000" />
       <workItem from="1544342115521" duration="3100000" />
       <workItem from="1544355211553" duration="374000" />
-      <workItem from="1544356304107" duration="1236000" />
+      <workItem from="1544356304107" duration="1762000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62378000" />
+    <option name="totallyTimeSpent" value="62904000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -246,9 +249,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="105" y="23" width="1091" height="711" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.23580366" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23580366" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -260,7 +262,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32871014" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.5233333" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.6782247" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.6766667" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="CMake" order="12" />
@@ -349,8 +351,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bTree.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="725">
-          <caret line="260" column="32" selection-start-line="260" selection-start-column="32" selection-end-line="260" selection-end-column="32" />
+        <state relative-caret-position="214">
+          <caret line="541" column="4" selection-start-line="541" selection-start-column="4" selection-end-line="541" selection-end-column="4" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -359,15 +361,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bTree.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1212">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+        <state relative-caret-position="376">
+          <caret line="76" column="4" selection-start-line="76" selection-start-column="4" selection-end-line="76" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/run.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+        <state relative-caret-position="48">
+          <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>

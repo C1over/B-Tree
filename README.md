@@ -7,3 +7,4 @@ a sophomore student’s data structure course,write on c.
 * destroyBTree
 * deleteBTree
 * printfBTree
+* replaceBTree
