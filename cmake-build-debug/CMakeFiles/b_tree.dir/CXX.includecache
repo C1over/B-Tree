@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+/Users/cc1over/CLionProjects/b-tree/bTree.cpp
+cstdlib
+-
+cstdio
+-
+bTree.h
+/Users/cc1over/CLionProjects/b-tree/bTree.h
+
 /Users/cc1over/CLionProjects/b-tree/bTree.h
 stdbool.h
 -

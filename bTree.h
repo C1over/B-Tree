@@ -66,4 +66,12 @@ void destroyBTree(BTree &bt);
  *
  * @param t B-树
  */
-void printfBTree(Queue q,BTree bt);
+void printfBTree(Queue q, BTree bt);
+
+/**
+ *  更换B树中的key
+ * @param bt      B树
+ * @param oKey    原来的key
+ * @param nKey    新的key
+ */
+void replaceBTree(BTree &bt, KeyType oKey, KeyType nKey);

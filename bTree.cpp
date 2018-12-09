@@ -539,4 +539,9 @@ void printfBTree(Queue q, BTree bt) {
     destroyQueue(q);
 }
 
+void replaceBTree(BTree &bt, KeyType oKey, KeyType nKey) {
+    deleteBTree(bt, oKey);
+    insertBTree(bt, nKey);
+}
+
 
