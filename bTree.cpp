@@ -4,8 +4,6 @@
 
 int search(BTree bt, KeyType key);
 
-KeyType keys[STAGE];
-
 void searchBTree(BTree bt, KeyType key, Result result) {
     int order = 0;
     bool found = false;
@@ -511,7 +509,6 @@ void traverse(BTree t, Queue q, int newline, int sum) {
         enQueue(q, t->child[0]);
         for (i = 1; i <= t->keyNum; i++) {
             printf("%d", t->key[i]);
-            keys[i] = t->key[i];
             if (i != t->keyNum) {
                 printf(",");
             }

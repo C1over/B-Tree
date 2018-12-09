@@ -13,10 +13,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c6d022ff-4d06-4db1-bb5a-eed636052e31" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bTree.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/bTree.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/b_tree.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/b_tree.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/b_tree" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/b_tree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/b_tree.dSYM/Contents/Resources/DWARF/b_tree" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/b_tree.dSYM/Contents/Resources/DWARF/b_tree" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/run.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -32,7 +28,7 @@
     <session id="1816458876">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.17" value="1" />
@@ -45,7 +41,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cpp" value="10859" />
+          <entry key="cpp" value="10879" />
           <entry key="h" value="1111" />
           <entry key="md" value="6" />
           <entry key="txt" value="24" />
@@ -55,7 +51,7 @@
         <counts>
           <entry key="CMakeLists.txt" value="24" />
           <entry key="Doxygen file" value="34" />
-          <entry key="ObjectiveC" value="11936" />
+          <entry key="ObjectiveC" value="11956" />
           <entry key="PLAIN_TEXT" value="6" />
         </counts>
       </usages-collector>
@@ -87,8 +83,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/run.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="61">
-              <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+            <state relative-caret-position="156">
+              <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -108,8 +104,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bTree.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="367" column="38" selection-start-line="367" selection-start-column="38" selection-end-line="367" selection-end-column="38" />
+            <state relative-caret-position="-3525">
+              <caret line="237" column="5" selection-start-line="237" selection-start-column="5" selection-end-line="237" selection-end-column="5" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -133,8 +129,8 @@
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/bTree.h" />
-        <option value="$PROJECT_DIR$/run.cpp" />
         <option value="$PROJECT_DIR$/bTree.cpp" />
+        <option value="$PROJECT_DIR$/run.cpp" />
       </list>
     </option>
   </component>
@@ -227,12 +223,12 @@
       <workItem from="1544241119677" duration="23253000" />
       <workItem from="1544271406638" duration="11111000" />
       <workItem from="1544331082387" duration="10395000" />
-      <workItem from="1544342115521" duration="1768000" />
+      <workItem from="1544342115521" duration="3100000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59436000" />
+    <option name="totallyTimeSpent" value="60768000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -252,14 +248,14 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.60833335" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.66237944" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.06666667" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.6616667" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32871014" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.525" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.6796116" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.52427185" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.67833334" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="CMake" order="12" />
@@ -298,15 +294,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/run.cpp</url>
-          <line>11</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
         <watch expression="p" />
@@ -364,8 +351,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/run.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+        <state relative-caret-position="156">
+          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -374,8 +361,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bTree.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="367" column="38" selection-start-line="367" selection-start-column="38" selection-end-line="367" selection-end-column="38" />
+        <state relative-caret-position="-3525">
+          <caret line="237" column="5" selection-start-line="237" selection-start-column="5" selection-end-line="237" selection-end-column="5" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
