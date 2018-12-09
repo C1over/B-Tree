@@ -66,4 +66,4 @@ void destroyBTree(BTree &bt);
  *
  * @param t B-树
  */
-void printfBTree(BTree bt);
+void printfBTree(Queue q,BTree bt);

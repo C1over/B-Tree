@@ -2,9 +2,9 @@
 #include <cstdio>
 #include "bTree.h"
 
-
 int search(BTree bt, KeyType key);
 
+KeyType keys[STAGE];
 
 void searchBTree(BTree bt, KeyType key, Result result) {
     int order = 0;
@@ -193,7 +193,6 @@ void borrowFromBrother(BTree &p, BTree &leftBrother,
                        BTree &rightBrother, BTree &parent, int &order) {
     if (leftBrother != NULL && leftBrother->keyNum >= (STAGE + 1) / 2) {
         for (int j = p->keyNum + 1; j > 0; j--) {
-            // 关键字与指针后移，腾出第一个位置
             if (j > 1) {
                 p->key[j] = p->key[j - 1];
             }
@@ -210,7 +209,6 @@ void borrowFromBrother(BTree &p, BTree &leftBrother,
         p->keyNum++;
     } else if (rightBrother && rightBrother->keyNum >= (STAGE + 1) / 2) {
         p->key[p->keyNum] = parent->key[order + 1];
-        // 子树指针指向右兄弟最左边的子树指针
         p->child[p->keyNum + 1] = rightBrother->child[0];
         if (p->child[p->keyNum + 1] != NULL) {
             p->child[p->keyNum + 1]->parent = p;
@@ -302,16 +300,13 @@ void restore(BTree &bt, BTree &p) {
  */
 void mergeWithLeftBrother(BTree &leftBrother, BTree &parent,
                           BTree &p, BTree &bt, int &order) {
-// 与左兄弟合并
-    leftBrother->key[leftBrother->keyNum + 1] = parent->key[order];    // 从父结点拿下分割本节点与左兄弟的关键字
+    leftBrother->key[leftBrother->keyNum + 1] = parent->key[order];
     leftBrother->child[leftBrother->keyNum + 1] = p->child[0];
     if (leftBrother->child[leftBrother->keyNum + 1] != NULL) {
-        leftBrother->child[leftBrother->keyNum +
-                           1]->parent = leftBrother;    // 给左兄弟的结点，当此结点存在时需要把其父亲指向指向左结点
+        leftBrother->child[leftBrother->keyNum + 1]->parent = leftBrother;
     }
-    leftBrother->keyNum++; //左兄弟关键数加1
+    leftBrother->keyNum++;
     for (int j = 1; j <= p->keyNum; j++) {
-        // 把本结点的关键字和子树指针赋给左兄弟
         leftBrother->key[leftBrother->keyNum + j] = p->key[j];
         leftBrother->child[leftBrother->keyNum + j] = p->child[j];
         if (leftBrother->child[leftBrother->keyNum + j] != NULL) {
@@ -320,16 +315,14 @@ void mergeWithLeftBrother(BTree &leftBrother, BTree &parent,
     }
     leftBrother->keyNum += p->keyNum;
     parent->child[order] = NULL;
-    free(p);    // 释放p结点
+    free(p);
     for (int j = order; j < parent->keyNum; j++) {
-        // 左移
         parent->key[j] = parent->key[j + 1];
         parent->child[j] = parent->child[j + 1];
     }
     parent->child[parent->keyNum] = NULL;
-    parent->keyNum--;        // 父结点关键字个数减1
+    parent->keyNum--;
     if (bt == parent) {
-        // 如果此时父结点为根，则当父结点没有关键字时才调整
         if (0 == parent->keyNum) {
             for (int j = 0; j <= parent->keyNum + 1; j++) {
                 if (parent->child[j] != NULL) {
@@ -340,7 +333,6 @@ void mergeWithLeftBrother(BTree &leftBrother, BTree &parent,
             }
         }
     } else {
-        // 如果父结点不为根，则需要判断是否需要重新调整
         if (parent->keyNum < (STAGE - 1) / 2) {
             restore(bt, parent);
         }
@@ -357,27 +349,25 @@ void mergeWithLeftBrother(BTree &leftBrother, BTree &parent,
  */
 void mergeWithRightBrother(BTree &rightBrother, BTree &parent,
                            BTree &p, BTree &bt, int &order) {
-// 与右兄弟合并
     for (int j = (rightBrother->keyNum); j > 0; j--) {
         if (j > 0) {
             rightBrother->key[j + 1 + p->keyNum] = rightBrother->key[j];
         }
         rightBrother->child[j + 1 + p->keyNum] = rightBrother->child[j];
     }
-    rightBrother->key[p->keyNum + 1] = parent->key[order + 1];    // 把父结点的分割两个本兄弟和右兄弟的关键字拿下来使用
+    rightBrother->key[p->keyNum + 1] = parent->key[order + 1];
     for (int j = 0; j <= p->keyNum; j++) {
-        // 把本结点的关键字及子树指针移动右兄弟中去
         if (j > 0) {
             rightBrother->key[j] = p->key[j];
         }
         rightBrother->child[j] = p->child[j];
         if (rightBrother->child[j] != NULL) {
-            rightBrother->child[j]->parent = rightBrother;    // 给右兄弟的结点需要把其父结点指向右兄弟
+            rightBrother->child[j]->parent = rightBrother;
         }
     }
     rightBrother->keyNum += (p->keyNum + 1);
     parent->child[order] = NULL;
-    free(p); // 释放p结点
+    free(p);
     for (int j = order; j < parent->keyNum; j++) {
         if (j > order) {
             parent->key[j] = parent->key[j + 1];
@@ -385,13 +375,11 @@ void mergeWithRightBrother(BTree &rightBrother, BTree &parent,
         parent->child[j] = parent->child[j + 1];
     }
     if (1 == parent->keyNum) {
-        // 如果父结点在关键字减少之前只有一个结点，那么需要把父结点的右孩子赋值给左孩子
         parent->child[0] = parent->child[1];
     }
     parent->child[parent->keyNum] = NULL;
-    parent->keyNum--;                    // 父结点关键字数减1
+    parent->keyNum--;
     if (bt == parent) {
-        //如果此时父结点为根，则当父结点没有关键字时才调整
         if (0 == parent->keyNum) {
             for (int j = 0; j <= parent->keyNum + 1; j++) {
                 if (parent->child[j] != NULL) {
@@ -402,7 +390,6 @@ void mergeWithRightBrother(BTree &rightBrother, BTree &parent,
             bt->parent = NULL;
         }
     } else {
-        //如果父结点不为根，则需要判断是否需要重新调整
         if (parent->keyNum < (STAGE - 1) / 2) {
             restore(bt, parent);
         }
@@ -410,7 +397,7 @@ void mergeWithRightBrother(BTree &rightBrother, BTree &parent,
 }
 
 /**
- * 删除B-树上p结点的第i个关键字
+ * 删除B树上目标结点的第i个关键字
  *
  * @param bt     B树
  * @param p      目标关键字所在结点
@@ -457,8 +444,8 @@ BTree initialize(BTree &bt) {
 }
 
 
-bool initQueue(Queue q) {
-    q = static_cast<Queue>(malloc(sizeof(QNode)));
+bool initQueue(Queue &q) {
+    q = (Queue) malloc(sizeof(QNode));
     if (!q) {
         return false;
     }
@@ -508,7 +495,8 @@ bool enQueue(Queue q, BTree bt) {
     if (!q) {
         return false;
     }
-    while (q->next != NULL) {
+
+    while (q->next) {
         q = q->next;
     }
     q->next = createQNode(bt);
@@ -523,16 +511,17 @@ void traverse(BTree t, Queue q, int newline, int sum) {
         enQueue(q, t->child[0]);
         for (i = 1; i <= t->keyNum; i++) {
             printf("%d", t->key[i]);
-            enQueue(q, t->child[i]);
+            keys[i] = t->key[i];
             if (i != t->keyNum) {
                 printf(",");
             }
+            enQueue(q, t->child[i]);
         }
         sum += t->keyNum + 1;
         printf("]");
         if (newline == 0) {
             printf("\n");
-            newline = sum - 1;
+            newline = sum-1;
             sum = 0;
         } else {
             newline--;
@@ -544,8 +533,7 @@ void traverse(BTree t, Queue q, int newline, int sum) {
     }
 }
 
-void printfBTree(BTree bt) {
-    Queue q = static_cast<Queue>(malloc(sizeof(Queue)));
+void printfBTree(Queue q, BTree bt) {
     if (!bt) {
         printf("该B树为空树");
     }
