@@ -10,5 +10,8 @@ int main() {
         insertBTree(bt, i);
     }
     deleteBTree(bt, 29);
+    deleteBTree(bt, 25);
+    deleteBTree(bt, 24);
+
     printfBTree(q, bt);
 }

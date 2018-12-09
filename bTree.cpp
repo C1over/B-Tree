@@ -365,7 +365,7 @@ void mergeWithRightBrother(BTree &rightBrother, BTree &parent,
             rightBrother->child[j]->parent = rightBrother;
         }
     }
-    rightBrother->keyNum += (p->keyNum + 1);
+    rightBrother->keyNum += p->keyNum;
     parent->child[order] = NULL;
     free(p);
     for (int j = order; j < parent->keyNum; j++) {
@@ -521,7 +521,7 @@ void traverse(BTree t, Queue q, int newline, int sum) {
         printf("]");
         if (newline == 0) {
             printf("\n");
-            newline = sum-1;
+            newline = sum - 1;
             sum = 0;
         } else {
             newline--;
