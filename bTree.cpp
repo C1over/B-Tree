@@ -2,6 +2,7 @@
 #include <cstdio>
 #include "bTree.h"
 
+
 int search(BTree bt, KeyType key);
 
 
@@ -455,35 +456,102 @@ BTree initialize(BTree &bt) {
     bt = static_cast<BTree>(malloc(sizeof(BTNode)));
 }
 
-void showBTree(BTree bt, int tab) {
-    if (!bt) {
-        return;
-    }
-    int i;
-    for (i = 1; i <= tab; i++) {
-        printf("    ");
-    }
-    for (i = 1; i <= bt->keyNum; i++) {
-        printf("%d", bt->key[i]);
-        if (i != bt->keyNum) {
-            printf(", ");
-        }
-    }
-    printf("\n");
-    for (i = 0; i <= bt->keyNum; i++) {
-        if (i == 0) {
-            showBTree(bt->child[i], tab - 1);
-        } else if (i == 1) {
-            showBTree(bt->child[i], tab);
-        } else {
-            showBTree(bt->child[i], tab + 1);
 
+bool initQueue(Queue q) {
+    q = static_cast<Queue>(malloc(sizeof(QNode)));
+    if (!q) {
+        return false;
+    }
+    q->next = NULL;
+    return true;
+}
+
+void destroyQueue(Queue q) {
+    Queue aq = NULL;
+    if (q) {
+        aq = q;
+        q = q->next;
+        free(aq);
+        destroyQueue(q);
+    }
+}
+
+bool isEmpty(Queue q) {
+    if (q == NULL) {
+        return true;
+    }
+    return q->next == NULL;
+}
+
+bool deQueue(Queue q, BTree &bt) {
+    QNode *aq = NULL;
+    if (!q || !q->next) {
+        return false;
+    }
+    aq = q->next;
+    q->next = aq->next;
+    bt = aq->data;
+    free(aq);
+    return true;
+}
+
+QNode *createQNode(BTree bt) {
+    QNode *node = static_cast<QNode *>(malloc(sizeof(QNode)));
+    if (node) {
+        node->data = bt;
+        node->next = NULL;
+    }
+    return node;
+}
+
+bool enQueue(Queue q, BTree bt) {
+    if (!q) {
+        return false;
+    }
+    while (q->next != NULL) {
+        q = q->next;
+    }
+    q->next = createQNode(bt);
+    return true;
+}
+
+void traverse(BTree t, Queue q, int newline, int sum) {
+    int i;
+    BTree p;
+    if (t) {
+        printf("[");
+        enQueue(q, t->child[0]);
+        for (i = 1; i <= t->keyNum; i++) {
+            printf("%d", t->key[i]);
+            enQueue(q, t->child[i]);
+            if (i != t->keyNum) {
+                printf(",");
+            }
         }
+        sum += t->keyNum + 1;
+        printf("]");
+        if (newline == 0) {
+            printf("\n");
+            newline = sum - 1;
+            sum = 0;
+        } else {
+            newline--;
+        }
+    }
+    if (!isEmpty(q)) {
+        deQueue(q, p);
+        traverse(p, q, newline, sum);
     }
 }
 
 void printfBTree(BTree bt) {
-    int tag = 3;
-    showBTree(bt, tag);
+    Queue q = static_cast<Queue>(malloc(sizeof(Queue)));
+    if (!bt) {
+        printf("该B树为空树");
+    }
+    initQueue(q);
+    traverse(bt, q, 0, 0);
+    destroyQueue(q);
 }
+
 

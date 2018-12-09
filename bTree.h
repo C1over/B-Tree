@@ -19,6 +19,11 @@ typedef struct result {
     bool tag;     // true：查找成功，false：查找失败
 } *Result;
 
+typedef struct QNode {          //链表和链表结点类型
+    BTree data;                 //数据域
+    struct QNode *next;         //指针域
+} QNode, *Queue;
+
 /**
  * 初始化B树
  *  @param length  关键字数组长度

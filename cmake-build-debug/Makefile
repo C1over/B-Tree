@@ -150,33 +150,6 @@ bTree.cpp.s:
 	$(MAKE) -f CMakeFiles/b_tree.dir/build.make CMakeFiles/b_tree.dir/bTree.cpp.s
 .PHONY : bTree.cpp.s
 
-queue.o: queue.cpp.o
-
-.PHONY : queue.o
-
-# target to build an object file
-queue.cpp.o:
-	$(MAKE) -f CMakeFiles/b_tree.dir/build.make CMakeFiles/b_tree.dir/queue.cpp.o
-.PHONY : queue.cpp.o
-
-queue.i: queue.cpp.i
-
-.PHONY : queue.i
-
-# target to preprocess a source file
-queue.cpp.i:
-	$(MAKE) -f CMakeFiles/b_tree.dir/build.make CMakeFiles/b_tree.dir/queue.cpp.i
-.PHONY : queue.cpp.i
-
-queue.s: queue.cpp.s
-
-.PHONY : queue.s
-
-# target to generate assembly for a file
-queue.cpp.s:
-	$(MAKE) -f CMakeFiles/b_tree.dir/build.make CMakeFiles/b_tree.dir/queue.cpp.s
-.PHONY : queue.cpp.s
-
 run.o: run.cpp.o
 
 .PHONY : run.o
@@ -216,9 +189,6 @@ help:
 	@echo "... bTree.o"
 	@echo "... bTree.i"
 	@echo "... bTree.s"
-	@echo "... queue.o"
-	@echo "... queue.i"
-	@echo "... queue.s"
 	@echo "... run.o"
 	@echo "... run.i"
 	@echo "... run.s"

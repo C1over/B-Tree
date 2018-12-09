@@ -1,7 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/b_tree.dir/bTree.cpp.o"
   "CMakeFiles/b_tree.dir/run.cpp.o"
-  "CMakeFiles/b_tree.dir/queue.cpp.o"
   "b_tree.pdb"
   "b_tree"
 )

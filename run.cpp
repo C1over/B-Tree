@@ -1,5 +1,7 @@
 #include <cstdlib>
+#include <printf.h>
 #include "bTree.h"
+
 
 int main() {
     BTree bt = static_cast<BTree>(malloc(sizeof(BTNode)));
@@ -15,5 +17,4 @@ int main() {
     insertBTree(bt, 19);
     insertBTree(bt, 20);
     printfBTree(bt);
-    return 0;
 }
