@@ -21,5 +21,6 @@ int main() {
 //    deleteBTree(bt, 26);
 //    deleteBTree(bt, 20);
     deleteBTree(bt, 31);
+    replaceBTree(bt, 27, 1);
     printfBTree(q, bt);
 }

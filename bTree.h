@@ -26,11 +26,9 @@ typedef struct QNode {          //链表和链表结点类型
 
 /**
  * 初始化B树
- *  @param length  关键字数组长度
- *  @param keys    关键字数组
- *  @return        创建的B树
+ *  @param bt  B树
  */
-BTree initialize(BTree &bt);
+void initialize(BTree &bt);
 
 /**
  *  在B树中查找关键字key，以result返回

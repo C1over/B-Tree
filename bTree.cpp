@@ -437,7 +437,7 @@ void destroyBTree(BTree &bt) {
     free(bt);
 }
 
-BTree initialize(BTree &bt) {
+void initialize(BTree &bt) {
     bt = static_cast<BTree>(malloc(sizeof(BTNode)));
 }
 
